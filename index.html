@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ছায়াকাব্য | Chhayakabbo - Premium Photography & Cinematography</title>
+    <meta name="description" content="বাংলাদেশের প্রিমিয়াম ওয়েডিং ফটোগ্রাফি এবং সিনেমাটোগ্রাফি এজেন্সি। আমরা আপনার জীবনের সেরা মুহূর্তগুলোকে অমর করে রাখি। Book your luxury shoot today.">
+    <meta name="keywords" content="Wedding Photography Bangladesh, Cinematography, Premium Photographer Dhaka, ছায়াকাব্য, Chhayakabbo, Holud, Reception, Pre-wedding">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chhayakabbo.com/">
+    <meta property="og:title" content="ছায়াকাব্য | Premium Photography & Cinematography">
+    <meta property="og:description" content="বাংলাদেশের প্রিমিয়াম ওয়েডিং ফটোগ্রাফি এবং সিনেমাটোগ্রাফি এজেন্সি।">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Noto Sans Bengali"', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#F3E5AB',
+                            500: '#D4AF37', // Premium Gold
+                            600: '#AA8C2C',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#141414',
+                            700: '#1f1f1f',
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base & Reset */
+        :root {
+            --gold: #D4AF37;
+            --bg-dark: #0a0a0a;
+            --text-light: #f3f4f6;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            cursor: none; /* For custom cursor */
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30,30,30,0.8) 0%, rgba(15,15,15,0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Custom Cursor */
+        .cursor-dot, .cursor-outline {
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px; height: 8px;
+            background-color: var(--gold);
+        }
+        .cursor-outline {
+            width: 40px; height: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        .cursor-hover .cursor-outline {
+            width: 60px; height: 60px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: var(--gold);
+        }
+
+        /* Animations */
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Loader */
+        #loader {
+            position: fixed; inset: 0; z-index: 10000;
+            background: var(--bg-dark);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 1s ease-in-out;
+        }
+        .loader-logo { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); letter-spacing: 4px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+        /* Hero Image/Video Overlay */
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.8) 80%, rgba(10,10,10,1) 100%);
+        }
+
+        /* Golden Text Gradient */
+        .text-gradient-gold {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Before/After Slider */
+        .ba-container { position: relative; width: 100%; max-width: 800px; margin: auto; overflow: hidden; border-radius: 12px; aspect-ratio: 16/9; }
+        .ba-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        .ba-img-after { z-index: 1; }
+        .ba-img-before { z-index: 2; clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); }
+        .ba-slider {
+            position: absolute; top: 0; bottom: 0; left: 50%; width: 4px;
+            background: var(--gold); z-index: 3; cursor: ew-resize; transform: translateX(-50%);
+        }
+        .ba-slider::before {
+            content: '↔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 40px; height: 40px; background: var(--bg-dark); border: 2px solid var(--gold);
+            border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--gold); font-weight: bold;
+        }
+
+        /* Light theme overrides */
+        .light-theme {
+            --bg-dark: #f8f9fa;
+            --text-light: #1a1a1a;
+        }
+        .light-theme .glass { background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.1); }
+        .light-theme .glass-card { background: #ffffff; border: 1px solid #e5e7eb; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+        .light-theme .text-gray-400 { color: #6b7280; }
+        .light-theme .hero-overlay { background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(248,249,250,0.9) 100%); }
+
+        /* Timeline */
+        .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: rgba(212, 175, 55, 0.2); transform: translateX(-50%); }
+        
+        input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); }
+        .light-theme input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0); }
+        /* RESPONSIVE FIXES */
+@media (max-width: 1024px) {
+    body {
+        cursor: auto !important;
+    }
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none !important;
+    }
+
+    .timeline-line {
+        display: none !important;
+    }
+
+    .glass-card {
+        transform: none !important;
+    }
+
+    .scale-105 {
+        transform: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .loader-logo {
+        font-size: 1.4rem !important;
+    }
+
+    .ba-slider::before {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .glass-card,
+    .glass {
+        padding: 1rem !important;
+    }
+
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .fixed.bottom-6.left-6,
+    .fixed.bottom-6.right-6 {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    p {
+        font-size: 14px !important;
+    }
+
+    .text-4xl {
+        font-size: 1.8rem !important;
+    }
+
+    .text-5xl {
+        font-size: 2rem !important;
+    }
+
+    .text-6xl {
+        font-size: 2.4rem !important;
+    }
+}
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold-500 selection:text-dark-900">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-logo mb-4">CHHAYAKABBO</div>
+        <div class="w-48 h-1 bg-dark-800 rounded overflow-hidden">
+            <div class="h-full bg-gold-500 w-0 transition-all duration-1000 ease-out" id="loader-progress"></div>
+        </div>
+        <p class="mt-4 text-sm text-gray-400 tracking-widest uppercase">অপেক্ষার প্রহর শেষ হচ্ছে...</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl md:text-3xl font-bold text-white tracking-wider hover-target">
+                ছায়া<span class="text-gold-500">কাব্য</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#services" class="text-sm font-medium hover:text-gold-500 transition-colors hover-target uppercase tracking-wide">সেবা</a>
+                <a href="#portfolio" class="text-sm font-medium hover:text-gold-500 transition-colors hover-target uppercase tracking-wide">পোর্টফোলিও</a>
+                <a href="#pricing" class="text-sm font-medium hover:text-gold-500 transition-colors hover-target uppercase tracking-wide">প্যাকেজ</a>
+                <a href="#about" class="text-sm font-medium hover:text-gold-500 transition-colors hover-target uppercase tracking-wide">আমাদের কথা</a>
+                
+                <div class="flex items-center space-x-4 border-l border-gray-700 pl-8">
+                    <button id="theme-toggle" class="hover:text-gold-500 transition-colors hover-target">
+                        <i class="ph ph-sun text-xl"></i>
+                    </button>
+                    <button id="music-toggle" class="hover:text-gold-500 transition-colors hover-target">
+                        <i class="ph ph-music-notes text-xl"></i>
+                    </button>
+                    <a href="#booking" class="px-6 py-2 bg-gold-500 text-dark-900 font-semibold rounded-full hover:bg-gold-400 transition-colors hover-target text-sm uppercase tracking-wider">
+                        বুকিং করুন
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="lg:hidden text-2xl hover:text-gold-500 hover-target" id="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-dark-900/95 backdrop-blur-xl z-40 hidden flex-col items-center justify-center space-y-8 text-xl">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-3xl text-gray-400 hover:text-white">
+                <i class="ph ph-x"></i>
+            </button>
+            <a href="#services" class="mobile-link hover:text-gold-500">সেবা সমূহ</a>
+            <a href="#portfolio" class="mobile-link hover:text-gold-500">পোর্টফোলিও</a>
+            <a href="#pricing" class="mobile-link hover:text-gold-500">মূল্যতালিকা</a>
+            <a href="#booking" class="mobile-link text-gold-500">বুকিং করুন</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <!-- Background Image/Video Placeholder -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Wedding Couple" class="w-full h-full object-cover opacity-60 scale-105 transform origin-center animate-[kenburns_20s_ease-in-out_infinite_alternate]" style="animation: kenburns 20s ease-in-out infinite alternate;">
+            <style>@keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }</style>
+        </div>
+        <div class="absolute inset-0 hero-overlay z-10"></div>
+
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto fade-up visible">
+            <p class="text-gold-500 font-medium tracking-[0.3em] uppercase mb-4 text-sm md:text-base">Premium Photography & Cinematography</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                অমর হোক আপনার <br>
+                <span class="text-gradient-gold italic font-light">সেরা মুহূর্তগুলো</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                বাংলাদেশের শীর্ষস্থানীয় ওয়েডিং এবং ইভেন্ট ফটোগ্রাফি এজেন্সি। আমরা শুধু ছবি তুলি না, আমরা গল্প বুনি যা প্রজন্ম থেকে প্রজন্মে টিকে থাকে।
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#portfolio" class="px-8 py-4 bg-transparent border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-dark-900 transition-all duration-300 rounded-full font-semibold tracking-wider hover-target uppercase text-sm w-full sm:w-auto">
+                    গল্পগুলো দেখুন
+                </a>
+                <a href="#calculator" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 rounded-full font-semibold tracking-wider hover-target uppercase text-sm w-full sm:w-auto flex items-center justify-center gap-2">
+                    <i class="ph ph-calculator"></i> খরচ হিসাব করুন
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center animate-bounce">
+            <span class="text-xs tracking-widest text-gray-400 uppercase mb-2">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-gold-500 to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- Brand Story / About -->
+    <section id="about" class="py-24 relative">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative fade-up">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Photographer Silhouette" class="rounded-2xl shadow-2xl w-full h-[600px] object-cover">
+                    <div class="absolute -bottom-10 -right-10 glass-card p-6 rounded-xl hidden md:block">
+                        <p class="text-4xl font-serif text-gold-500 font-bold">৭+</p>
+                        <p class="text-sm text-gray-300 uppercase tracking-wider">বছরের অভিজ্ঞতা</p>
+                    </div>
+                </div>
+                <div class="fade-up delay-200">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">আমাদের <span class="text-gold-500">গল্প</span></h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        ছায়াকাব্য শুরু হয়েছিল একটি ছোট স্বপ্ন নিয়ে— মানুষের জীবনের সবচেয়ে সুন্দর মুহূর্তগুলোকে একটি ফ্রেমে আটকে রাখার স্বপ্ন। আজ আমরা বাংলাদেশের অন্যতম প্রিমিয়াম ফটোগ্রাফি এজেন্সি।
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        আমাদের প্রতিটি ফ্রেম, প্রতিটি ভিডিও এক একটি আবেগ। আমরা বিশ্বাস করি, সেরা ছবিগুলো পোজ দিয়ে নয়, বরং সত্যিকারের ভালোবাসার মুহূর্তগুলো থেকে তৈরি হয়।
+                    </p>
+                    
+                    <!-- Stats Counter -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-gray-800" id="stats">
+                        <div class="text-center">
+                            <h4 class="text-3xl font-serif text-white font-bold counter" data-target="1500">0</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mt-2">হ্যাপি ক্লায়েন্ট</p>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-3xl font-serif text-white font-bold counter" data-target="300">0</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mt-2">ইভেন্ট কাভার</p>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-3xl font-serif text-white font-bold counter" data-target="50">0</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mt-2">প্রফেশনাল টিম</p>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-3xl font-serif text-white font-bold counter" data-target="15">0</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mt-2">অ্যাওয়ার্ড</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-dark-800 relative">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 fade-up">
+                <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">What We Do</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2">আমাদের <span class="italic text-gray-400">সেবাসমূহ</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Service Cards generated mostly for variety, kept compact in code -->
+                <script>
+                    const services = [
+                        { icon: 'camera', title: 'ওয়েডিং ফটোগ্রাফি', desc: 'বিয়ের প্রতিটি মুহূর্তের নিখুঁত ফ্রেম।' },
+                        { icon: 'video-camera', title: 'সিনেমাটোগ্রাফি', desc: '৪কে রেজোলিউশনে আপনার বিয়ের সিনেমাটিক ফিল্ম।' },
+                        { icon: 'heart', title: 'প্রি-ওয়েডিং শুট', desc: 'রোমান্টিক লোকেশনে কাপল শুট।' },
+                        { icon: 'sparkle', title: 'হলুদ ও মেহেদী', desc: 'রঙিন ও উৎসবমুখর মুহূর্তের লেন্সবন্দি।' },
+                        { icon: 'crown', title: 'ব্রাইডাল পোর্ট্রেট', desc: 'কনের সাজের প্রিমিয়াম পোর্ট্রেট।' },
+                        { icon: 'users', title: 'ফ্যামিলি ইভেন্ট', desc: 'পারিবারিক যেকোনো আয়োজনের কভারেজ।' },
+                        { icon: 'baby', title: 'বেবি ও মেটারনিটি', desc: 'নতুন অতিথির আগমনের স্মৃতি।' },
+                        { icon: 'buildings', title: 'কর্পোরেট ইভেন্ট', desc: 'প্রফেশনাল কর্পোরেট কভারেজ।' },
+                        { icon: 'drone', title: 'ড্রোন কভারেজ', desc: 'উপর থেকে চোখ ধাঁধানো দৃশ্য।' },
+                        { icon: 'instagram-logo', title: 'রিলস ও প্রমো', desc: 'সোশ্যাল মিডিয়ার জন্য শর্ট ভিডিও।' },
+                        { icon: 'hamburger', title: 'ফুড ফটোগ্রাফি', desc: 'লোভনীয় খাবারের কমার্শিয়াল শুট।' },
+                        { icon: 'airplane-tilt', title: 'ডেস্টিনেশন শুট', desc: 'দেশের বাইরে বা যেকোনো লোকেশনে শুট।' }
+                    ];
+
+                    document.write(services.map((s, i) => `
+                        <div class="glass-card p-8 rounded-2xl hover-target fade-up" style="transition-delay: ${i*50}ms">
+                            <i class="ph ph-${s.icon} text-4xl text-gold-500 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2 font-serif">${s.title}</h3>
+                            <p class="text-gray-400 text-sm">${s.desc}</p>
+                        </div>
+                    `).join(''));
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 relative">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 fade-up">
+                <div>
+                    <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Gallery</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2">আমাদের <span class="text-gradient-gold">কাজ</span></h2>
+                </div>
+                <div class="flex flex-wrap gap-4 mt-6 md:mt-0">
+                    <button class="filter-btn active text-sm uppercase tracking-wider px-4 py-2 border-b-2 border-gold-500 text-gold-500" data-filter="all">সব</button>
+                    <button class="filter-btn text-sm uppercase tracking-wider px-4 py-2 border-b-2 border-transparent text-gray-500 hover:text-white" data-filter="wedding">ওয়েডিং</button>
+                    <button class="filter-btn text-sm uppercase tracking-wider px-4 py-2 border-b-2 border-transparent text-gray-500 hover:text-white" data-filter="cinematic">সিনেমাটিক</button>
+                    <button class="filter-btn text-sm uppercase tracking-wider px-4 py-2 border-b-2 border-transparent text-gray-500 hover:text-white" data-filter="portrait">পোর্ট্রেট</button>
+                </div>
+            </div>
+
+            <!-- Auto Sliding Portfolio -->
+<div id="portfolio-slider" class="relative overflow-hidden rounded-2xl shadow-2xl">
+    <div id="portfolio-track" class="flex transition-transform duration-700 ease-in-out">
+
+        <div class="min-w-full relative">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80"
+                 alt="Wedding"
+                 class="w-full h-[280px] md:h-[500px] object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+                <div>
+                    <h4 class="text-white text-2xl md:text-4xl font-serif">Wedding Moments</h4>
+                    <p class="text-gold-500">Premium Coverage</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-full relative">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=80"
+                 alt="Portrait"
+                 class="w-full h-[280px] md:h-[500px] object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+                <div>
+                    <h4 class="text-white text-2xl md:text-4xl font-serif">Bridal Portrait</h4>
+                    <p class="text-gold-500">Luxury Shoot</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-full relative">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80"
+                 alt="Couple"
+                 class="w-full h-[280px] md:h-[500px] object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+                <div>
+                    <h4 class="text-white text-2xl md:text-4xl font-serif">Couple Story</h4>
+                    <p class="text-gold-500">Cinematic Love Story</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-full relative">
+            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1600&q=80"
+                 alt="Cinematic"
+                 class="w-full h-[280px] md:h-[500px] object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+                <div>
+                    <h4 class="text-white text-2xl md:text-4xl font-serif">Cinematic Films</h4>
+                    <p class="text-gold-500">4K Storytelling</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="text-center mt-12">
+    <button class="px-8 py-3 border border-gray-700 hover:border-gold-500 hover:text-gold-500 transition-colors rounded-full text-sm uppercase tracking-widest hover-target">
+        আরও দেখুন
+    </button>
+</div>
+    </section>
+
+    <!-- Before/After Edit Showcase -->
+    <section class="py-24 bg-dark-800 border-y border-gray-800">
+        <div class="container mx-auto px-4 md:px-8 text-center fade-up">
+            <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Post Production</span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mt-2 mb-12">কালার গ্রেডিং এর <span class="italic">ম্যাজিক</span></h2>
+            
+            <div class="ba-container hover-target" id="ba-container">
+                <!-- Using placeholder images that look distinct to simulate editing -->
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80&sat=-100" alt="Before" class="ba-img ba-img-after"> <!-- Desaturated for 'before' -->
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="After" class="ba-img ba-img-before" id="ba-img-before"> <!-- Vibrant for 'after' -->
+                <div class="ba-slider" id="ba-slider"></div>
+                <div class="absolute top-4 left-4 bg-black/60 text-white px-3 py-1 rounded text-xs z-10">After (Edited)</div>
+                <div class="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded text-xs z-10">Before (Raw)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Process Timeline -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold">আমাদের <span class="text-gold-500">প্রক্রিয়া</span></h2>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <div class="timeline-line hidden md:block"></div>
+                
+                <div class="space-y-12">
+                    <!-- Step 1 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up">
+                        <div class="hidden md:block w-5 h-5 rounded-full bg-gold-500 border-4 border-dark-900 absolute left-1/2 transform -translate-x-1/2 z-10 group-hover:scale-150 transition-transform"></div>
+                        <div class="w-full md:w-[45%] glass-card p-6 rounded-xl">
+                            <h3 class="text-xl font-bold text-gold-500 mb-2">১. কনসালটেশন</h3>
+                            <p class="text-gray-400 text-sm">আপনার ইভেন্টের বিস্তারিত এবং আপনাদের পছন্দ নিয়ে আলোচনা।</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up">
+                        <div class="hidden md:block w-5 h-5 rounded-full bg-gold-500 border-4 border-dark-900 absolute left-1/2 transform -translate-x-1/2 z-10 group-hover:scale-150 transition-transform"></div>
+                        <div class="w-full md:w-[45%] glass-card p-6 rounded-xl">
+                            <h3 class="text-xl font-bold text-gold-500 mb-2">২. বুকিং ও প্ল্যানিং</h3>
+                            <p class="text-gray-400 text-sm">প্যাকেজ নির্বাচন এবং শুটের ক্রিয়েটিভ প্ল্যানিং চূড়ান্ত করা।</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up">
+                        <div class="hidden md:block w-5 h-5 rounded-full bg-gold-500 border-4 border-dark-900 absolute left-1/2 transform -translate-x-1/2 z-10 group-hover:scale-150 transition-transform"></div>
+                        <div class="w-full md:w-[45%] glass-card p-6 rounded-xl">
+                            <h3 class="text-xl font-bold text-gold-500 mb-2">৩. ইভেন্ট শুট</h3>
+                            <p class="text-gray-400 text-sm">প্রফেশনাল টিম এবং অত্যাধুনিক যন্ত্রপাতি দিয়ে মুহূর্তগুলো ধারণ।</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up">
+                        <div class="hidden md:block w-5 h-5 rounded-full bg-gold-500 border-4 border-dark-900 absolute left-1/2 transform -translate-x-1/2 z-10 group-hover:scale-150 transition-transform"></div>
+                        <div class="w-full md:w-[45%] glass-card p-6 rounded-xl">
+                            <h3 class="text-xl font-bold text-gold-500 mb-2">৪. এডিটিং ও ডেলিভারি</h3>
+                            <p class="text-gray-400 text-sm">সিনেমাটিক কালার গ্রেডিং এবং প্রিমিয়াম অ্যালবামের মাধ্যমে ফাইনাল ডেলিভারি।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-dark-800">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 fade-up">
+                <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Investment</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2">আমাদের <span class="italic">প্যাকেজসমূহ</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Basic -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col fade-up hover-target">
+                    <h3 class="text-2xl font-serif mb-2">বেসিক (Basic)</h3>
+                    <p class="text-gray-400 text-sm mb-6">ছোট এবং ঘরোয়া আয়োজনের জন্য।</p>
+                    <div class="text-4xl font-bold text-gold-500 mb-8">৳ ১৫,০০০ <span class="text-sm text-gray-500 font-normal">/ ইভেন্ট</span></div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ১ জন টপ ফটোগ্রাফার</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ১০০টি এডিটেড ছবি</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> আনলিমিটেড ক্লিক</li>
+                        <li class="flex items-center text-sm text-gray-500"><i class="ph ph-x-circle mr-2 text-lg"></i> সিনেমাটোগ্রাফি নেই</li>
+                        <li class="flex items-center text-sm text-gray-500"><i class="ph ph-x-circle mr-2 text-lg"></i> প্রিন্ট অ্যালবাম নেই</li>
+                    </ul>
+                    <button onclick="document.getElementById('booking').scrollIntoView()" class="w-full py-3 border border-gold-500 text-gold-500 rounded-full hover:bg-gold-500 hover:text-dark-900 transition-colors uppercase text-sm tracking-wider font-semibold">বুক করুন</button>
+                </div>
+
+                <!-- Premium (Highlighted) -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col border-gold-500 relative transform scale-105 shadow-[0_0_30px_rgba(212,175,55,0.15)] fade-up delay-100 hover-target z-10">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gold-500 text-dark-900 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Most Popular</div>
+                    <h3 class="text-2xl font-serif mb-2 text-white">প্রিমিয়াম (Premium)</h3>
+                    <p class="text-gray-400 text-sm mb-6">পরিপূর্ণ ওয়েডিং কভারেজ।</p>
+                    <div class="text-4xl font-bold text-gold-500 mb-8">৳ ৩৫,০০০ <span class="text-sm text-gray-500 font-normal">/ ইভেন্ট</span></div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ২ জন চিফ ফটোগ্রাফার</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ১ জন সিনেমাটোগ্রাফার</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ২৫০টি স্পেশাল এডিটেড ছবি</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ৩-৫ মিনিট হাইলাইট ভিডিও</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ১টি প্রিমিয়াম ম্যাট অ্যালবাম (12x24)</li>
+                    </ul>
+                    <button onclick="document.getElementById('booking').scrollIntoView()" class="w-full py-3 bg-gold-500 text-dark-900 rounded-full hover:bg-gold-400 transition-colors uppercase text-sm tracking-wider font-bold shadow-lg">বুক করুন</button>
+                </div>
+
+                <!-- Luxury -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col fade-up delay-200 hover-target">
+                    <h3 class="text-2xl font-serif mb-2">লাক্সারি (Royal)</h3>
+                    <p class="text-gray-400 text-sm mb-6">ভিআইপি এবং মেগা ইভেন্টের জন্য।</p>
+                    <div class="text-4xl font-bold text-gold-500 mb-8">৳ ৭৫,০০০+ <span class="text-sm text-gray-500 font-normal">/ ইভেন্ট</span></div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ফুল প্রফেশনাল টিম (৫+ জন)</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ড্রোন সিনেমাটোগ্রাফি</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ৫০০০+ ছবি, ৫০০+ এডিটেড</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ডকুমেন্টারি স্টাইল ভিডিও</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ২টি এক্সক্লুসিভ গ্লাস অ্যালবাম</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="ph ph-check-circle text-gold-500 mr-2 text-lg"></i> ক্যানভাস ফ্রেম</li>
+                    </ul>
+                    <button onclick="document.getElementById('booking').scrollIntoView()" class="w-full py-3 border border-gold-500 text-gold-500 rounded-full hover:bg-gold-500 hover:text-dark-900 transition-colors uppercase text-sm tracking-wider font-semibold">কাস্টমাইজ করুন</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Price Calculator -->
+    <section id="calculator" class="py-24 relative border-b border-gray-800">
+        <div class="container mx-auto px-4 md:px-8 max-w-4xl">
+            <div class="glass p-8 md:p-12 rounded-3xl fade-up relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-gold-500/10 rounded-full blur-3xl"></div>
+                
+                <h2 class="font-serif text-3xl font-bold mb-8 text-center"><i class="ph ph-calculator text-gold-500 mr-2"></i> কাস্টম প্যাকেজ ক্যালকুলেটর</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">ইভেন্টের ধরন</label>
+                        <select id="calc-event" class="w-full bg-dark-900 border border-gray-700 rounded-lg p-3 text-white focus:border-gold-500 outline-none hover-target">
+                            <option value="15000">হলুদ / মেহেদী (৳১৫,০০০+)</option>
+                            <option value="20000" selected>ওয়েডিং (৳২০,০০০+)</option>
+                            <option value="18000">রিসেপশন (৳১৮,০০০+)</option>
+                            <option value="10000">প্রি-ওয়েডিং (৳১০,০০০+)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">ফটোগ্রাফার সংখ্যা</label>
+                        <input type="number" id="calc-photo" min="1" max="5" value="2" class="w-full bg-dark-900 border border-gray-700 rounded-lg p-3 text-white focus:border-gold-500 outline-none hover-target">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">সিনেমাটোগ্রাফার সংখ্যা</label>
+                        <input type="number" id="calc-video" min="0" max="5" value="1" class="w-full bg-dark-900 border border-gray-700 rounded-lg p-3 text-white focus:border-gold-500 outline-none hover-target">
+                    </div>
+                    <div class="flex items-center space-x-4 mt-6">
+                        <label class="flex items-center cursor-pointer hover-target">
+                            <input type="checkbox" id="calc-drone" value="8000" class="sr-only peer">
+                            <div class="w-6 h-6 bg-dark-900 border-2 border-gray-600 rounded peer-checked:bg-gold-500 peer-checked:border-gold-500 flex items-center justify-center transition-colors">
+                                <i class="ph ph-check text-dark-900 opacity-0 peer-checked:opacity-100"></i>
+                            </div>
+                            <span class="ml-3 text-sm">ড্রোন কভারেজ (+৳৮,০০০)</span>
+                        </label>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <label class="flex items-center cursor-pointer hover-target">
+                            <input type="checkbox" id="calc-album" value="5000" class="sr-only peer" checked>
+                            <div class="w-6 h-6 bg-dark-900 border-2 border-gray-600 rounded peer-checked:bg-gold-500 peer-checked:border-gold-500 flex items-center justify-center transition-colors">
+                                <i class="ph ph-check text-dark-900 opacity-0 peer-checked:opacity-100"></i>
+                            </div>
+                            <span class="ml-3 text-sm">প্রিমিয়াম অ্যালবাম (+৳৫,০০০)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-6 bg-dark-900/50 rounded-xl border border-gold-500/30 text-center">
+                    <p class="text-sm text-gray-400 uppercase tracking-wider mb-2">আনুমানিক খরচ</p>
+                    <div class="text-4xl md:text-5xl font-bold text-gold-500 font-serif">৳ <span id="calc-total">0</span></div>
+                    <p class="text-xs text-gray-500 mt-2">* এটি একটি আনুমানিক হিসাব। বিস্তারিত জানতে বুকিং ফর্ম পূরণ করুন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8 text-center fade-up">
+            <h2 class="font-serif text-4xl font-bold mb-16">ক্লায়েন্টদের <span class="text-gold-500">ভালোবাসা</span></h2>
+            
+            <div class="flex justify-center flex-wrap gap-8">
+                <div class="glass-card p-8 rounded-2xl max-w-md text-left relative">
+                    <i class="ph-fill ph-quotes text-4xl text-gray-700 absolute top-4 right-4"></i>
+                    <div class="flex text-gold-500 mb-4"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"অসাধারণ কাজ! আমাদের বিয়ের ছবিগুলো দেখে আমরা মুগ্ধ। ছায়াকাব্য টিমের ব্যবহার এবং প্রফেশনালিজম সত্যিই প্রশংসনীয়।"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-600 overflow-hidden"><img src="https://ui-avatars.com/api/?name=Farhan+Ahmed&background=random" alt="Farhan"></div>
+                        <div>
+                            <h5 class="font-bold text-white">Farhan & Sadia</h5>
+                            <p class="text-xs text-gray-500">Wedding, Dhaka Club</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl max-w-md text-left relative">
+                    <i class="ph-fill ph-quotes text-4xl text-gray-700 absolute top-4 right-4"></i>
+                    <div class="flex text-gold-500 mb-4"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"The cinematic video made us cry. They perfectly captured the emotion of our special day. Highly recommended!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-600 overflow-hidden"><img src="https://ui-avatars.com/api/?name=Tahsin+&background=random" alt="Tahsin"></div>
+                        <div>
+                            <h5 class="font-bold text-white">Tahsin Rahman</h5>
+                            <p class="text-xs text-gray-500">Holud Event</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Availability -->
+    <section id="booking" class="py-24 bg-dark-800 relative">
+        <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                
+                <!-- Contact Info / Availability -->
+                <div class="lg:col-span-2 space-y-8 fade-up">
+                    <div>
+                        <h2 class="font-serif text-3xl font-bold mb-4">ডেট বুকিং করুন</h2>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">আপনার বিশেষ দিনের জন্য আমাদের শিডিউল ফাঁকা আছে কিনা যাচাই করুন এবং দ্রুত বুকিং কনফার্ম করুন।</p>
+                    </div>
+
+                    <div class="glass p-6 rounded-xl border-l-4 border-gold-500">
+                        <h4 class="font-bold mb-2 flex items-center"><i class="ph ph-calendar-check text-gold-500 mr-2 text-xl"></i> Availability Checker</h4>
+                        <p class="text-xs text-gray-400 mb-3">Select a date to see our status:</p>
+                        <input type="date" class="w-full bg-dark-900 border border-gray-700 rounded p-2 text-white text-sm focus:border-gold-500 outline-none hover-target" id="date-check">
+                        <div id="availability-status" class="mt-3 text-sm font-medium hidden"></div>
+                    </div>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-10 h-10 rounded-full bg-dark-900 flex items-center justify-center text-gold-500"><i class="ph ph-phone"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase">Call Us</p>
+                                <p class="font-medium">+880 1712-345678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-10 h-10 rounded-full bg-dark-900 flex items-center justify-center text-gold-500"><i class="ph ph-envelope-simple"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase">Email</p>
+                                <p class="font-medium">booking@chhayakabbo.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-10 h-10 rounded-full bg-dark-900 flex items-center justify-center text-gold-500"><i class="ph ph-map-pin"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase">Studio</p>
+                                <p class="font-medium text-sm">Banani, Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="lg:col-span-3 glass-card p-8 md:p-10 rounded-2xl fade-up delay-100">
+                    <form id="booking-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">নাম *</label>
+                                <input type="text" required class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600" placeholder="Your Full Name">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">ফোন নম্বর (WhatsApp) *</label>
+                                <input type="tel" required class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600" placeholder="01XXXXXXXXX">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">ইভেন্টের তারিখ *</label>
+                                <input type="date" required class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">ইভেন্টের ধরন *</label>
+                                <select required class="w-full bg-dark-800 border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target">
+                                    <option value="">নির্বাচন করুন</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="holud">Holud / Mehendi</option>
+                                    <option value="reception">Reception</option>
+                                    <option value="prewedding">Pre-Wedding</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">ভেন্যু / লোকেশন</label>
+                                <input type="text" class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600" placeholder="e.g. Sena Malancha">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">পছন্দের প্যাকেজ</label>
+                                <select class="w-full bg-dark-800 border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target">
+                                    <option value="basic">Basic (৳১৫,০০০+)</option>
+                                    <option value="premium" selected>Premium (৳৩৫,০০০+)</option>
+                                    <option value="luxury">Luxury (৳৭৫,০০০+)</option>
+                                    <option value="custom">Custom Package</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">বিস্তারিত বার্তা</label>
+                            <textarea rows="3" class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600 resize-none" placeholder="Tell us more about your event..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-gold-500 text-dark-900 font-bold rounded-lg hover:bg-gold-400 transition-colors uppercase tracking-widest hover-target shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                            বুকিং রিকোয়েস্ট পাঠান
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Buttons -->
+    <a href="https://wa.me/8801700000000" target="_blank" class="fixed bottom-6 left-6 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform hover-target">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+    
+    <button id="back-to-top" class="fixed bottom-6 right-6 z-40 bg-dark-800 border border-gold-500 text-gold-500 w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg hover:bg-gold-500 hover:text-dark-900 transition-all opacity-0 translate-y-10 hover-target">
+        <i class="ph ph-arrow-up"></i>
+    </button>
+
+    <!-- Booking Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity">
+        <div class="glass-card p-8 md:p-12 rounded-2xl max-w-lg w-full text-center relative transform scale-95 transition-transform" id="modal-content">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl hover-target"><i class="ph ph-x"></i></button>
+            <div class="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+                <i class="ph-fill ph-check-circle"></i>
+            </div>
+            <h3 class="text-3xl font-serif mb-2">ধন্যবাদ!</h3>
+            <p class="text-gray-300 mb-6">আপনার বুকিং রিকোয়েস্ট সফলভাবে জমা হয়েছে। আমাদের টিম খুব শীঘ্রই আপনার সাথে যোগাযোগ করবে।</p>
+            
+            <div class="bg-dark-900 p-4 rounded-lg text-left text-sm text-gray-400 mb-6 font-mono">
+                <p>Receipt ID: #CK-<span id="rand-id"></span></p>
+                <p>Status: Pending Review</p>
+            </div>
+
+            <button class="px-8 py-3 bg-gold-500 text-dark-900 font-bold rounded-full hover:bg-gold-400 transition-colors uppercase text-sm tracking-widest hover-target">
+                Download Invoice PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 pt-20 pb-10 border-t border-gray-800 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,var(--gold)_0%,transparent_70%)]"></div>
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <a href="#" class="font-serif text-3xl font-bold text-white tracking-wider mb-6 block">
+                        ছায়া<span class="text-gold-500">কাব্য</span>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">বাংলাদেশের অন্যতম প্রিমিয়াম ফটোগ্রাফি ও সিনেমাটোগ্রাফি এজেন্সি। আমরা লেন্সের মাধ্যমে গল্প বলি।</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-800 flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-dark-900 transition-colors hover-target"><i class="ph-fill ph-facebook-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-800 flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-dark-900 transition-colors hover-target"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-800 flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-dark-900 transition-colors hover-target"><i class="ph-fill ph-youtube-logo"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-serif text-xl mb-6 border-b border-gray-800 pb-2 inline-block">কুইক লিংকস</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-gold-500 text-sm transition-colors hover-target">আমাদের সম্পর্কে</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-gold-500 text-sm transition-colors hover-target">পোর্টফোলিও</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-gold-500 text-sm transition-colors hover-target">সেবাসমূহ</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-gold-500 text-sm transition-colors hover-target">প্যাকেজ ও মূল্য</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-500 text-sm transition-colors hover-target">শর্তাবলী</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-serif text-xl mb-6 border-b border-gray-800 pb-2 inline-block">যোগাযোগ</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-400 text-sm gap-3">
+                            <i class="ph ph-map-pin text-gold-500 text-lg mt-1"></i>
+                            <span>হাউস ৪২, রোড ৭, ব্লক সি, <br>বনানী, ঢাকা ১২১৩, বাংলাদেশ</span>
+                        </li>
+                        <li class="flex items-center text-gray-400 text-sm gap-3">
+                            <i class="ph ph-phone text-gold-500 text-lg"></i>
+                            <span>+880 1712-345678</span>
+                        </li>
+                        <li class="flex items-center text-gray-400 text-sm gap-3">
+                            <i class="ph ph-envelope text-gold-500 text-lg"></i>
+                            <span>hello@chhayakabbo.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-serif text-xl mb-6 border-b border-gray-800 pb-2 inline-block">নিউজলেটার</h4>
+                    <p class="text-gray-400 text-sm mb-4">আমাদের নতুন কাজ এবং অফার সম্পর্কে জানতে সাবস্ক্রাইব করুন।</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your Email" class="w-full bg-dark-800 border border-gray-700 rounded-l-lg p-3 text-white text-sm focus:border-gold-500 outline-none hover-target">
+                        <button type="button" class="bg-gold-500 text-dark-900 px-4 rounded-r-lg font-bold hover:bg-gold-400 transition-colors hover-target"><i class="ph ph-paper-plane-right"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center pt-8 border-t border-gray-800 text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Chhayakabbo Photography. All rights reserved.</p>
+                <p>Designed with <i class="ph-fill ph-heart text-gold-500"></i> in Bangladesh</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Ambient -->
+    <audio id="ambient-music" loop>
+        <!-- Using a placeholder audio file that sounds cinematic if it existed -->
+        <!-- Since we can't rely on external audio urls, we'll mock the play state visually -->
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const portfolioTrack = document.getElementById('portfolio-track');
+
+if (portfolioTrack) {
+    let currentSlide = 0;
+    const totalSlides = portfolioTrack.children.length;
+
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        portfolioTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }, 3000);
+}
+            
+            // 1. Loader Logic
+            const loader = document.getElementById('loader');
+            const loaderProgress = document.getElementById('loader-progress');
+            
+            setTimeout(() => {
+                loaderProgress.style.width = '100%';
+            }, 100);
+
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                        document.body.style.overflow = 'auto'; // Re-enable scroll
+                        initScrollAnimations(); // Trigger initial animations
+                    }, 1000);
+                }, 1500); // Minimum loading time for premium feel
+            });
+
+            // 2. Custom Cursor Logic (Desktop only)
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorOutline = document.querySelector('.cursor-outline');
+            const hoverTargets = document.querySelectorAll('.hover-target, a, button, input, select, textarea');
+
+            if(window.innerWidth > 768) {
+                window.addEventListener('mousemove', (e) => {
+                    const posX = e.clientX;
+                    const posY = e.clientY;
+                    
+                    cursorDot.style.left = `${posX}px`;
+                    cursorDot.style.top = `${posY}px`;
+                    
+                    // Add a slight delay to outline for smooth trailing effect
+                    cursorOutline.animate({
+                        left: `${posX}px`,
+                        top: `${posY}px`
+                    }, { duration: 500, fill: "forwards" });
+                });
+
+                hoverTargets.forEach(target => {
+                    target.addEventListener('mouseenter', () => {
+                        document.body.classList.add('cursor-hover');
+                    });
+                    target.addEventListener('mouseleave', () => {
+                        document.body.classList.remove('cursor-hover');
+                    });
+                });
+            }
+
+            // 3. Navbar Scroll Effect & Mobile Menu
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('glass');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.add('py-2');
+                    
+                    backToTop.classList.remove('opacity-0', 'translate-y-10');
+                    backToTop.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    navbar.classList.remove('glass');
+                    navbar.classList.add('py-4');
+                    navbar.classList.remove('py-2');
+
+                    backToTop.classList.add('opacity-0', 'translate-y-10');
+                    backToTop.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+
+            // 4. Theme & Music Toggles
+            const themeToggle = document.getElementById('theme-toggle');
+            const htmlTag = document.documentElement;
+            
+            themeToggle.addEventListener('click', () => {
+                htmlTag.classList.toggle('light-theme');
+                const icon = themeToggle.querySelector('i');
+                if (htmlTag.classList.contains('light-theme')) {
+                    icon.classList.remove('ph-sun');
+                    icon.classList.add('ph-moon');
+                } else {
+                    icon.classList.remove('ph-moon');
+                    icon.classList.add('ph-sun');
+                }
+            });
+
+            const musicToggle = document.getElementById('music-toggle');
+            let isPlaying = false;
+            musicToggle.addEventListener('click', () => {
+                const icon = musicToggle.querySelector('i');
+                isPlaying = !isPlaying;
+                if (isPlaying) {
+                    icon.classList.remove('ph-music-notes');
+                    icon.classList.add('ph-speaker-high');
+                    icon.classList.add('text-gold-500');
+                    // audio.play(); // Mocking play
+                } else {
+                    icon.classList.add('ph-music-notes');
+                    icon.classList.remove('ph-speaker-high');
+                    icon.classList.remove('text-gold-500');
+                    // audio.pause();
+                }
+            });
+
+            // 5. Scroll Animations (Intersection Observer)
+            function initScrollAnimations() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px"
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            
+                            // Handle counter animation if it's the stats section
+                            if (entry.target.id === 'stats' || entry.target.querySelector('.counter')) {
+                                runCounters();
+                            }
+                            
+                            // Optional: unobserve after animating once
+                            // observer.unobserve(entry.target); 
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.fade-up').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            // 6. Number Counter Animation
+            let countersRun = false;
+            function runCounters() {
+                if (countersRun) return;
+                countersRun = true;
+                
+                const counters = document.querySelectorAll('.counter');
+                const speed = 200; // The lower the slower
+
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 10);
+                        } else {
+                            counter.innerText = target + "+";
+                        }
+                    };
+                    updateCount();
+                });
+            }
+
+            // 7. Portfolio Filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Active state
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'border-gold-500', 'text-gold-500');
+                        b.classList.add('border-transparent', 'text-gray-500');
+                    });
+                    btn.classList.add('active', 'border-gold-500', 'text-gold-500');
+                    btn.classList.remove('border-transparent', 'text-gray-500');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => { item.style.display = 'none'; }, 300); // match transition
+                        }
+                    });
+                });
+            });
+
+            // 8. Before/After Slider Logic
+            const baContainer = document.getElementById('ba-container');
+            const baBeforeImg = document.getElementById('ba-img-before');
+            const baSlider = document.getElementById('ba-slider');
+            
+            let isDragging = false;
+
+            const updateSlider = (xPos) => {
+                const rect = baContainer.getBoundingClientRect();
+                let x = xPos - rect.left;
+                // Boundaries
+                if (x < 0) x = 0;
+                if (x > rect.width) x = rect.width;
+                
+                const percentage = (x / rect.width) * 100;
+                baSlider.style.left = `${percentage}%`;
+                baBeforeImg.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+            };
+
+            baSlider.addEventListener('mousedown', () => isDragging = true);
+            window.addEventListener('mouseup', () => isDragging = false);
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging) updateSlider(e.clientX);
+            });
+            
+            // Touch support
+            baSlider.addEventListener('touchstart', () => isDragging = true);
+            window.addEventListener('touchend', () => isDragging = false);
+            window.addEventListener('touchmove', (e) => {
+                if (isDragging) updateSlider(e.touches[0].clientX);
+            });
+
+            // 9. Pricing Calculator
+            const calcEvent = document.getElementById('calc-event');
+            const calcPhoto = document.getElementById('calc-photo');
+            const calcVideo = document.getElementById('calc-video');
+            const calcDrone = document.getElementById('calc-drone');
+            const calcAlbum = document.getElementById('calc-album');
+            const calcTotal = document.getElementById('calc-total');
+
+            function calculateTotal() {
+                const baseEventPrice = parseInt(calcEvent.value) || 0;
+                const photoCost = (parseInt(calcPhoto.value) - 1) * 5000; // 1 included in base, extra 5k each
+                const videoCost = parseInt(calcVideo.value) * 8000; // 8k per cinematographer
+                const droneCost = calcDrone.checked ? parseInt(calcDrone.value) : 0;
+                const albumCost = calcAlbum.checked ? parseInt(calcAlbum.value) : 0;
+
+                const total = baseEventPrice + (photoCost > 0 ? photoCost : 0) + videoCost + droneCost + albumCost;
+                
+                // Format with commas
+                calcTotal.innerText = total.toLocaleString('en-IN');
+            }
+
+            [calcEvent, calcPhoto, calcVideo, calcDrone, calcAlbum].forEach(el => {
+                el.addEventListener('change', calculateTotal);
+                if(el.type === 'number') el.addEventListener('input', calculateTotal);
+            });
+            calculateTotal(); // Init
+
+            // 10. Availability Checker Mock
+            const dateCheck = document.getElementById('date-check');
+            const statusDiv = document.getElementById('availability-status');
+            
+            dateCheck.addEventListener('change', (e) => {
+                const selectedDate = e.target.value;
+                if(!selectedDate) return;
+                
+                statusDiv.classList.remove('hidden');
+                statusDiv.innerHTML = '<i class="ph ph-spinner animate-spin text-gold-500 mr-2"></i> Checking...';
+                
+                // Mock API call delay
+                setTimeout(() => {
+                    const isAvailable = Math.random() > 0.3; // 70% chance available
+                    if(isAvailable) {
+                        statusDiv.innerHTML = `<span class="text-green-500"><i class="ph-fill ph-check-circle mr-1"></i> Date is Available! Book now.</span>`;
+                    } else {
+                        statusDiv.innerHTML = `<span class="text-red-500"><i class="ph-fill ph-x-circle mr-1"></i> Date is booked. Contact for waiting list.</span>`;
+                    }
+                }, 800);
+            });
+
+            // 11. Booking Form Submission & Modal
+            const bookingForm = document.getElementById('booking-form');
+            const modal = document.getElementById('success-modal');
+            const closeModal = document.getElementById('close-modal');
+            const modalContent = document.getElementById('modal-content');
+            const randId = document.getElementById('rand-id');
+
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Show modal
+                modal.classList.remove('hidden');
+                randId.innerText = Math.floor(100000 + Math.random() * 900000);
+                
+                // Trigger animation
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                    modalContent.classList.add('scale-100');
+                }, 10);
+                
+                bookingForm.reset();
+            });
+
+            const hideModal = () => {
+                modal.classList.add('opacity-0');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            };
+
+            closeModal.addEventListener('click', hideModal);
+            modal.addEventListener('click', (e) => {
+                if(e.target === modal) hideModal();
+            });
+        });
+    </script>
+</body>
+</html>
