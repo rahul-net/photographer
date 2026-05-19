@@ -24,6 +24,8 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -339,7 +341,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <header class="relative h-[65vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
         <!-- Background Image/Video Placeholder -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Wedding Couple" class="w-full h-full object-cover opacity-60 scale-105 transform origin-center animate-[kenburns_20s_ease-in-out_infinite_alternate]" style="animation: kenburns 20s ease-in-out infinite alternate;">
@@ -347,7 +349,7 @@
         </div>
         <div class="absolute inset-0 hero-overlay z-10"></div>
 
-        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto fade-up visible">
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto fade-up visible pt-16">
             <p class="text-gold-500 font-medium tracking-[0.3em] uppercase mb-4 text-sm md:text-base">Premium Photography & Cinematography</p>
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
                 অমর হোক আপনার <br>
@@ -377,13 +379,19 @@
     <section id="about" class="py-24 relative">
         <div class="container mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="relative fade-up">
-                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Photographer Silhouette" class="rounded-2xl shadow-2xl w-full h-[600px] object-cover">
-                    <div class="absolute -bottom-10 -right-10 glass-card p-6 rounded-xl hidden md:block">
-                        <p class="text-4xl font-serif text-gold-500 font-bold">৭+</p>
-                        <p class="text-sm text-gray-300 uppercase tracking-wider">বছরের অভিজ্ঞতা</p>
-                    </div>
-                </div>
+
+    <div class="relative fade-up">
+        <img
+            src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"
+            alt="Photography Studio"
+            class="w-full h-[500px] object-cover rounded-3xl shadow-2xl"
+        >
+
+        <div class="absolute -bottom-8 -right-8 glass-card p-6 rounded-2xl hidden md:block">
+            <p class="text-4xl font-serif text-gold-500 font-bold">৭+</p>
+            <p class="text-sm text-gray-300 uppercase tracking-wider">বছরের অভিজ্ঞতা</p>
+        </div>
+    </div>
                 <div class="fade-up delay-200">
                     <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">আমাদের <span class="text-gold-500">গল্প</span></h2>
                     <p class="text-gray-400 text-lg leading-relaxed mb-6">
@@ -472,20 +480,87 @@
             </div>
 
             <!-- Auto Sliding Portfolio -->
-<div id="portfolio-slider" class="relative overflow-hidden rounded-2xl shadow-2xl">
-    <div id="portfolio-track" class="flex transition-transform duration-700 ease-in-out">
+<div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <div class="min-w-full relative">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80"
-                 alt="Wedding"
-                 class="w-full h-[280px] md:h-[500px] object-cover">
-            <div class="absolute inset-0 bg-black/40 flex items-end p-6">
-                <div>
-                    <h4 class="text-white text-2xl md:text-4xl font-serif">Wedding Moments</h4>
-                    <p class="text-gold-500">Premium Coverage</p>
-                </div>
+    <!-- Wedding -->
+    <div class="portfolio-item wedding relative overflow-hidden rounded-2xl group">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"
+             class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-110">
+
+        <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+            <div>
+                <h4 class="text-white text-2xl font-serif">Wedding Story</h4>
+                <p class="text-gold-500 text-sm">Luxury Wedding</p>
             </div>
         </div>
+    </div>
+
+    <!-- Wedding -->
+    <div class="portfolio-item wedding relative overflow-hidden rounded-2xl group">
+        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80"
+             class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-110">
+
+        <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+            <div>
+                <h4 class="text-white text-2xl font-serif">Golden Moments</h4>
+                <p class="text-gold-500 text-sm">Wedding Ceremony</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cinematic -->
+    <div class="portfolio-item cinematic relative overflow-hidden rounded-2xl group">
+        <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1200&q=80"
+             class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-110">
+
+        <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+            <div>
+                <h4 class="text-white text-2xl font-serif">Cinematic Film</h4>
+                <p class="text-gold-500 text-sm">4K Storytelling</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portrait -->
+    <div class="portfolio-item portrait relative overflow-hidden rounded-2xl group">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"
+             class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-110">
+
+        <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+            <div>
+                <h4 class="text-white text-2xl font-serif">Bridal Portrait</h4>
+                <p class="text-gold-500 text-sm">Premium Portrait</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cinematic -->
+    <div class="portfolio-item cinematic relative overflow-hidden rounded-2xl group">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80"
+             class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-110">
+
+        <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+            <div>
+                <h4 class="text-white text-2xl font-serif">Love Story</h4>
+                <p class="text-gold-500 text-sm">Cinematic Couple</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portrait -->
+    <div class="portfolio-item portrait relative overflow-hidden rounded-2xl group">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80"
+             class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-110">
+
+        <div class="absolute inset-0 bg-black/40 flex items-end p-6">
+            <div>
+                <h4 class="text-white text-2xl font-serif">Elegant Bride</h4>
+                <p class="text-gold-500 text-sm">Luxury Portrait</p>
+            </div>
+        </div>
+    </div>
+
+</div>
 
         <div class="min-w-full relative">
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=80"
@@ -796,22 +871,22 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">নাম *</label>
-                                <input type="text" required class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600" placeholder="Your Full Name">
+                                <input type="text" id="customer-name" required class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600" placeholder="Your Full Name">
                             </div>
                             <div>
                                 <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">ফোন নম্বর (WhatsApp) *</label>
-                                <input type="tel" required class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600" placeholder="01XXXXXXXXX">
+                                <input type="tel" id="customer-phone" required class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600" placeholder="01XXXXXXXXX">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">ইভেন্টের তারিখ *</label>
-                                <input type="date" required class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target">
+                                <input type="date" id="event-date" required class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target">
                             </div>
                             <div>
                                 <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">ইভেন্টের ধরন *</label>
-                                <select required class="w-full bg-dark-800 border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target">
+                                <select id="event-type" required class="w-full bg-dark-800 border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target">
                                     <option value="">নির্বাচন করুন</option>
                                     <option value="wedding">Wedding</option>
                                     <option value="holud">Holud / Mehendi</option>
@@ -825,11 +900,11 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">ভেন্যু / লোকেশন</label>
-                                <input type="text" class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600" placeholder="e.g. Sena Malancha">
+                                <input type="text" id="event-venue" class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600" placeholder="e.g. Sena Malancha">
                             </div>
                             <div>
                                 <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">পছন্দের প্যাকেজ</label>
-                                <select class="w-full bg-dark-800 border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target">
+                                <select id="event-package" class="w-full bg-dark-800 border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target">
                                     <option value="basic">Basic (৳১৫,০০০+)</option>
                                     <option value="premium" selected>Premium (৳৩৫,০০০+)</option>
                                     <option value="luxury">Luxury (৳৭৫,০০০+)</option>
@@ -840,7 +915,7 @@
 
                         <div>
                             <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1">বিস্তারিত বার্তা</label>
-                            <textarea rows="3" class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600 resize-none" placeholder="Tell us more about your event..."></textarea>
+                            <textarea id="event-message" rows="3" class="w-full bg-transparent border-b border-gray-700 py-2 text-white focus:border-gold-500 outline-none transition-colors hover-target placeholder-gray-600 resize-none" placeholder="Tell us more about your event..."></textarea>
                         </div>
 
                         <button type="submit" class="w-full py-4 bg-gold-500 text-dark-900 font-bold rounded-lg hover:bg-gold-400 transition-colors uppercase tracking-widest hover-target shadow-[0_0_20px_rgba(212,175,55,0.3)]">
@@ -876,7 +951,7 @@
                 <p>Status: Pending Review</p>
             </div>
 
-            <button class="px-8 py-3 bg-gold-500 text-dark-900 font-bold rounded-full hover:bg-gold-400 transition-colors uppercase text-sm tracking-widest hover-target">
+            <button id="download-invoice" class="px-8 py-3 bg-gold-500 text-dark-900 font-bold rounded-full hover:bg-gold-400 transition-colors uppercase text-sm tracking-widest hover-target">
                 Download Invoice PDF
             </button>
         </div>
@@ -1299,6 +1374,116 @@ if (portfolioTrack) {
                 if(e.target === modal) hideModal();
             });
         });
+        const bookingForm = document.getElementById('booking-form');
+const successModal = document.getElementById('success-modal');
+const downloadBtn = document.getElementById('download-invoice');
+const closeModalBtn = document.getElementById('close-modal');
+
+bookingForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const receiptId = Math.floor(100000 + Math.random() * 900000);
+    document.getElementById('rand-id').textContent = receiptId;
+
+    successModal.classList.remove('hidden');
+    successModal.classList.add('flex');
+    successModal.style.opacity = '1';
+});
+
+closeModalBtn.addEventListener('click', function() {
+    successModal.classList.add('hidden');
+    successModal.classList.remove('flex');
+    successModal.style.opacity = '0';
+});
+
+downloadBtn.addEventListener('click', function() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const name = document.getElementById('customer-name').value || 'N/A';
+    const phone = document.getElementById('customer-phone').value || 'N/A';
+    const date = document.getElementById('event-date').value || 'N/A';
+    const eventType = document.getElementById('event-type').options[document.getElementById('event-type').selectedIndex].text;
+    const venue = document.getElementById('event-venue').value || 'N/A';
+    const pkg = document.getElementById('event-package').options[document.getElementById('event-package').selectedIndex].text;
+    const message = document.getElementById('event-message').value || 'N/A';
+    const invoiceId = document.getElementById('rand-id').textContent || '000000';
+
+    let amount = 35000;
+
+    if (pkg.includes('Basic')) amount = 15000;
+    if (pkg.includes('Luxury')) amount = 75000;
+
+    doc.setFillColor(255, 255, 255);
+    doc.rect(0, 0, 210, 297, 'F');
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(24);
+    doc.text("CHHAYAKABBO", 20, 20);
+
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "normal");
+    doc.text("Premium Photography & Cinematography", 20, 28);
+    doc.text("Banani, Dhaka, Bangladesh", 20, 34);
+    doc.text("+880 1712-345678", 20, 40);
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(20);
+    doc.text("INVOICE", 155, 20);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.text(`Invoice #: CK-${invoiceId}`, 150, 30);
+    doc.text(`Date: ${new Date().toLocaleDateString()}`, 150, 36);
+    doc.text(`Status: Pending`, 150, 42);
+
+    doc.setDrawColor(200);
+    doc.line(20, 50, 190, 50);
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(13);
+    doc.text("Bill To:", 20, 65);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(11);
+    doc.text(`Name: ${name}`, 20, 75);
+    doc.text(`Phone: ${phone}`, 20, 83);
+    doc.text(`Event Date: ${date}`, 20, 91);
+    doc.text(`Event Type: ${eventType}`, 20, 99);
+    doc.text(`Venue: ${venue}`, 20, 107);
+
+    doc.line(20, 118, 190, 118);
+
+    doc.setFont("helvetica", "bold");
+    doc.text("Description", 20, 130);
+    doc.text("Amount", 160, 130);
+
+    doc.setFont("helvetica", "normal");
+    doc.text(pkg, 20, 142);
+    doc.text(`BDT ${amount.toLocaleString()}`, 160, 142);
+
+    doc.line(20, 150, 190, 150);
+
+    doc.setFont("helvetica", "bold");
+    doc.text("Total", 20, 165);
+    doc.text(`BDT ${amount.toLocaleString()}`, 160, 165);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+
+    if (message !== 'N/A') {
+        doc.text("Client Note:", 20, 185);
+        doc.text(message.substring(0, 100), 20, 193);
+    }
+
+    doc.line(20, 250, 190, 250);
+
+    doc.setFontSize(10);
+    doc.text("Thank you for choosing CHHAYAKABBO.", 20, 262);
+    doc.text("This is a system-generated invoice.", 20, 270);
+
+    doc.save(`CHHAYAKABBO-INVOICE-${invoiceId}.pdf`);
+});
     </script>
 </body>
 </html>
