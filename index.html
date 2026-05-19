@@ -341,7 +341,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative h-[65vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
+    <header class="relative h-auto min-h-[38vh] md:min-h-[50vh] w-full flex items-start justify-center overflow-hidden pt-14 md:pt-16 pb-0">
         <!-- Background Image/Video Placeholder -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Wedding Couple" class="w-full h-full object-cover opacity-60 scale-105 transform origin-center animate-[kenburns_20s_ease-in-out_infinite_alternate]" style="animation: kenburns 20s ease-in-out infinite alternate;">
@@ -349,50 +349,21 @@
         </div>
         <div class="absolute inset-0 hero-overlay z-10"></div>
 
-        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto fade-up visible pt-16">
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto fade-up visible pt-0">
             <p class="text-gold-500 font-medium tracking-[0.3em] uppercase mb-4 text-sm md:text-base">Premium Photography & Cinematography</p>
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
                 অমর হোক আপনার <br>
                 <span class="text-gradient-gold italic font-light">সেরা মুহূর্তগুলো</span>
             </h1>
-            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+            <p class="text-gray-300 text-lg md:text-xl mb-0 max-w-2xl mx-auto font-light leading-relaxed">
                 বাংলাদেশের শীর্ষস্থানীয় ওয়েডিং এবং ইভেন্ট ফটোগ্রাফি এজেন্সি। আমরা শুধু ছবি তুলি না, আমরা গল্প বুনি যা প্রজন্ম থেকে প্রজন্মে টিকে থাকে।
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a href="#portfolio" class="px-8 py-4 bg-transparent border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-dark-900 transition-all duration-300 rounded-full font-semibold tracking-wider hover-target uppercase text-sm w-full sm:w-auto">
-                    গল্পগুলো দেখুন
-                </a>
-                <a href="#calculator" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 rounded-full font-semibold tracking-wider hover-target uppercase text-sm w-full sm:w-auto flex items-center justify-center gap-2">
-                    <i class="ph ph-calculator"></i> খরচ হিসাব করুন
-                </a>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center animate-bounce">
-            <span class="text-xs tracking-widest text-gray-400 uppercase mb-2">Scroll</span>
-            <div class="w-[1px] h-12 bg-gradient-to-b from-gold-500 to-transparent"></div>
         </div>
     </header>
 
-    <!-- Brand Story / About -->
-    <section id="about" class="py-24 relative">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-    <div class="relative fade-up">
-        <img
-            src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"
-            alt="Photography Studio"
-            class="w-full h-[500px] object-cover rounded-3xl shadow-2xl"
-        >
-
-        <div class="absolute -bottom-8 -right-8 glass-card p-6 rounded-2xl hidden md:block">
-            <p class="text-4xl font-serif text-gold-500 font-bold">৭+</p>
-            <p class="text-sm text-gray-300 uppercase tracking-wider">বছরের অভিজ্ঞতা</p>
-        </div>
-    </div>
-                <div class="fade-up delay-200">
+<section id="about" class="py-12 relative">
+    <div class="container mx-auto px-4 md:px-8">
+        <div class="fade-up delay-200 max-w-5xl mx-auto text-center">
                     <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">আমাদের <span class="text-gold-500">গল্প</span></h2>
                     <p class="text-gray-400 text-lg leading-relaxed mb-6">
                         ছায়াকাব্য শুরু হয়েছিল একটি ছোট স্বপ্ন নিয়ে— মানুষের জীবনের সবচেয়ে সুন্দর মুহূর্তগুলোকে একটি ফ্রেমে আটকে রাখার স্বপ্ন। আজ আমরা বাংলাদেশের অন্যতম প্রিমিয়াম ফটোগ্রাফি এজেন্সি।
@@ -419,9 +390,6 @@
                             <h4 class="text-3xl font-serif text-white font-bold counter" data-target="15">0</h4>
                             <p class="text-xs text-gray-500 uppercase tracking-wider mt-2">অ্যাওয়ার্ড</p>
                         </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -433,7 +401,7 @@
                 <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2">আমাদের <span class="italic text-gray-400">সেবাসমূহ</span></h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Service Cards generated mostly for variety, kept compact in code -->
                 <script>
                     const services = [
@@ -452,7 +420,7 @@
                     ];
 
                     document.write(services.map((s, i) => `
-                        <div class="glass-card p-8 rounded-2xl hover-target fade-up" style="transition-delay: ${i*50}ms">
+                        <div class="glass-card p-5 rounded-2xl hover-target fade-up" style="transition-delay: ${i*50}ms">
                             <i class="ph ph-${s.icon} text-4xl text-gold-500 mb-4"></i>
                             <h3 class="text-xl font-semibold mb-2 font-serif">${s.title}</h3>
                             <p class="text-gray-400 text-sm">${s.desc}</p>
@@ -466,7 +434,7 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-24 relative">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 fade-up">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 fade-up">
                 <div>
                     <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Gallery</span>
                     <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2">আমাদের <span class="text-gradient-gold">কাজ</span></h2>
@@ -570,7 +538,6 @@
                 <div>
                     <h4 class="text-white text-2xl md:text-4xl font-serif">Bridal Portrait</h4>
                     <p class="text-gold-500">Luxury Shoot</p>
-                </div>
             </div>
         </div>
 
@@ -582,7 +549,6 @@
                 <div>
                     <h4 class="text-white text-2xl md:text-4xl font-serif">Couple Story</h4>
                     <p class="text-gold-500">Cinematic Love Story</p>
-                </div>
             </div>
         </div>
 
@@ -625,53 +591,60 @@
         </div>
     </section>
 
-    <!-- Work Process Timeline -->
-    <section class="py-24 relative overflow-hidden">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="font-serif text-4xl md:text-5xl font-bold">আমাদের <span class="text-gold-500">প্রক্রিয়া</span></h2>
+    <!-- Work Process Compact Section -->
+<section class="py-16 relative overflow-hidden">
+    <div class="container mx-auto px-4 md:px-8">
+        <div class="text-center mb-12 fade-up">
+            <h2 class="font-serif text-4xl md:text-5xl font-bold">
+                আমাদের <span class="text-gold-500">প্রক্রিয়া</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+            
+            <div class="glass-card p-5 md:p-6 rounded-2xl text-center fade-up hover-target">
+                <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center font-bold text-xl">
+                    ১
+                </div>
+                <h3 class="text-lg font-bold text-gold-500 mb-2">কনসালটেশন</h3>
+                <p class="text-gray-400 text-sm">
+                    আপনার ইভেন্টের বিস্তারিত এবং পছন্দ নিয়ে আলোচনা।
+                </p>
             </div>
 
-            <div class="relative max-w-4xl mx-auto">
-                <div class="timeline-line hidden md:block"></div>
-                
-                <div class="space-y-12">
-                    <!-- Step 1 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up">
-                        <div class="hidden md:block w-5 h-5 rounded-full bg-gold-500 border-4 border-dark-900 absolute left-1/2 transform -translate-x-1/2 z-10 group-hover:scale-150 transition-transform"></div>
-                        <div class="w-full md:w-[45%] glass-card p-6 rounded-xl">
-                            <h3 class="text-xl font-bold text-gold-500 mb-2">১. কনসালটেশন</h3>
-                            <p class="text-gray-400 text-sm">আপনার ইভেন্টের বিস্তারিত এবং আপনাদের পছন্দ নিয়ে আলোচনা।</p>
-                        </div>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up">
-                        <div class="hidden md:block w-5 h-5 rounded-full bg-gold-500 border-4 border-dark-900 absolute left-1/2 transform -translate-x-1/2 z-10 group-hover:scale-150 transition-transform"></div>
-                        <div class="w-full md:w-[45%] glass-card p-6 rounded-xl">
-                            <h3 class="text-xl font-bold text-gold-500 mb-2">২. বুকিং ও প্ল্যানিং</h3>
-                            <p class="text-gray-400 text-sm">প্যাকেজ নির্বাচন এবং শুটের ক্রিয়েটিভ প্ল্যানিং চূড়ান্ত করা।</p>
-                        </div>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up">
-                        <div class="hidden md:block w-5 h-5 rounded-full bg-gold-500 border-4 border-dark-900 absolute left-1/2 transform -translate-x-1/2 z-10 group-hover:scale-150 transition-transform"></div>
-                        <div class="w-full md:w-[45%] glass-card p-6 rounded-xl">
-                            <h3 class="text-xl font-bold text-gold-500 mb-2">৩. ইভেন্ট শুট</h3>
-                            <p class="text-gray-400 text-sm">প্রফেশনাল টিম এবং অত্যাধুনিক যন্ত্রপাতি দিয়ে মুহূর্তগুলো ধারণ।</p>
-                        </div>
-                    </div>
-                    <!-- Step 4 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-up">
-                        <div class="hidden md:block w-5 h-5 rounded-full bg-gold-500 border-4 border-dark-900 absolute left-1/2 transform -translate-x-1/2 z-10 group-hover:scale-150 transition-transform"></div>
-                        <div class="w-full md:w-[45%] glass-card p-6 rounded-xl">
-                            <h3 class="text-xl font-bold text-gold-500 mb-2">৪. এডিটিং ও ডেলিভারি</h3>
-                            <p class="text-gray-400 text-sm">সিনেমাটিক কালার গ্রেডিং এবং প্রিমিয়াম অ্যালবামের মাধ্যমে ফাইনাল ডেলিভারি।</p>
-                        </div>
-                    </div>
+            <div class="glass-card p-5 md:p-6 rounded-2xl text-center fade-up hover-target">
+                <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center font-bold text-xl">
+                    ২
                 </div>
+                <h3 class="text-lg font-bold text-gold-500 mb-2">বুকিং</h3>
+                <p class="text-gray-400 text-sm">
+                    প্যাকেজ নির্বাচন ও শুট পরিকল্পনা চূড়ান্ত।
+                </p>
             </div>
+
+            <div class="glass-card p-5 md:p-6 rounded-2xl text-center fade-up hover-target">
+                <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center font-bold text-xl">
+                    ৩
+                </div>
+                <h3 class="text-lg font-bold text-gold-500 mb-2">ইভেন্ট শুট</h3>
+                <p class="text-gray-400 text-sm">
+                    প্রফেশনাল টিম দিয়ে মুহূর্তগুলো ধারণ।
+                </p>
+            </div>
+
+            <div class="glass-card p-5 md:p-6 rounded-2xl text-center fade-up hover-target">
+                <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center font-bold text-xl">
+                    ৪
+                </div>
+                <h3 class="text-lg font-bold text-gold-500 mb-2">ডেলিভারি</h3>
+                <p class="text-gray-400 text-sm">
+                    এডিটিং শেষে প্রিমিয়াম ফাইনাল ডেলিভারি।
+                </p>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Pricing Section -->
     <section id="pricing" class="py-24 bg-dark-800">
@@ -681,9 +654,9 @@
                 <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2">আমাদের <span class="italic">প্যাকেজসমূহ</span></h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
                 <!-- Basic -->
-                <div class="glass-card p-8 rounded-2xl flex flex-col fade-up hover-target">
+                <div class="glass-card p-4 md:p-8 rounded-2xl flex flex-col fade-up hover-target">
                     <h3 class="text-2xl font-serif mb-2">বেসিক (Basic)</h3>
                     <p class="text-gray-400 text-sm mb-6">ছোট এবং ঘরোয়া আয়োজনের জন্য।</p>
                     <div class="text-4xl font-bold text-gold-500 mb-8">৳ ১৫,০০০ <span class="text-sm text-gray-500 font-normal">/ ইভেন্ট</span></div>
@@ -1115,6 +1088,31 @@ if (portfolioTrack) {
             backToTop.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
+            
+            const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        const filterValue = this.dataset.filter;
+
+        filterBtns.forEach(b => {
+            b.classList.remove('border-gold-500', 'text-gold-500');
+            b.classList.add('border-transparent', 'text-gray-500');
+        });
+
+        this.classList.add('border-gold-500', 'text-gold-500');
+        this.classList.remove('border-transparent', 'text-gray-500');
+
+        portfolioItems.forEach(item => {
+            if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
 
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const closeBtn = document.getElementById('close-menu-btn');
@@ -1225,36 +1223,6 @@ if (portfolioTrack) {
                     updateCount();
                 });
             }
-
-            // 7. Portfolio Filtering
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Active state
-                    filterBtns.forEach(b => {
-                        b.classList.remove('active', 'border-gold-500', 'text-gold-500');
-                        b.classList.add('border-transparent', 'text-gray-500');
-                    });
-                    btn.classList.add('active', 'border-gold-500', 'text-gold-500');
-                    btn.classList.remove('border-transparent', 'text-gray-500');
-
-                    const filterValue = btn.getAttribute('data-filter');
-
-                    portfolioItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'block';
-                            setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'scale(0.8)';
-                            setTimeout(() => { item.style.display = 'none'; }, 300); // match transition
-                        }
-                    });
-                });
-            });
-
             // 8. Before/After Slider Logic
             const baContainer = document.getElementById('ba-container');
             const baBeforeImg = document.getElementById('ba-img-before');
